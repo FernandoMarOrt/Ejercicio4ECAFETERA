@@ -10,8 +10,8 @@ package Cafetera;
  */
 public class Cafetera {
     
-    private double capacidadMaxima; //cantidad maxima de cafe 
-    private double cantidadActual; //cantidad actual de cafe que hay en la cafetera
+    private double capacidadMaxima;//cantidad maxima de cafe 
+    private double cantidadActual;//cantidad actual de cafe que hay en la cafetera
 
     //Constructor por defecto/predeterminado sin parametros y modifico 
     public Cafetera() {
@@ -62,9 +62,11 @@ public class Cafetera {
             cantidadDeTaza = cantidadAServir;
             
             //Resta la cantidad a servir de la cantidad actual 
-            this.cantidadActual  =- cantidadAServir;
+            this.cantidadActual  -= cantidadAServir;
             
         }
+        
+        
         
     }
     
@@ -77,7 +79,17 @@ public class Cafetera {
     
     public void agregarCafe(double cantidadAgregar) {
         
-        this.cantidadActual =+ cantidadAgregar;
+        //Si se le agrega mas de la cantidad maxima permitida
+        //simplemente llegara al limite y la cantidad actual se igualara a la 
+        //maxima
+        if(cantidadAgregar > this.capacidadMaxima) {
+            
+            this.cantidadActual = this.capacidadMaxima;
+        } else {
+            
+            this.cantidadActual =+ cantidadAgregar;
+        }
+        
         
     }
 
@@ -95,6 +107,12 @@ public class Cafetera {
 
     public void setCantidadActual(double cantidadActual) {
         this.cantidadActual = cantidadActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Cafetera{" + "capacidadMaxima=" + capacidadMaxima +
+                ", cantidadActual=" + cantidadActual + '}';
     }
     
     

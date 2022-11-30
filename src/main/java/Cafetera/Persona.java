@@ -11,9 +11,9 @@ package Cafetera;
 public class Persona {
 
     private int edad;
-    private int nombre;
+    private String nombre;
 
-    public Persona(int edad, int nombre) {
+    public Persona(int edad, String nombre) {
         this.edad = edad;
         this.nombre = nombre;
     }
@@ -26,11 +26,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -46,7 +46,7 @@ public class Persona {
     
     public void beberCafe(Cafetera c, int cantidad) {
         
-       c.
+       c.servirTaza(cantidad);
         
     }
 

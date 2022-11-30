@@ -46,6 +46,7 @@ public class Persona {
     
     public void beberCafe(Cafetera c, int cantidad) {
         
+       c.
         
     }
 
